@@ -50,15 +50,15 @@ const Index = () => {
     <Container centerContent maxW="container.sm" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
       <VStack as="form" spacing={4} onSubmit={handleSubmit} width="100%">
         <Heading as="h1" size="xl" mb={6}>
-          Customer Information Management System
+          客户信息管理系统
         </Heading>
         <FormControl isInvalid={errors.email}>
-          <FormLabel htmlFor="email">Email</FormLabel>
+          <FormLabel htmlFor="email">账号</FormLabel>
           <Input id="email" type="email" value={email} onChange={handleEmailChange} />
           <FormErrorMessage>{errors.email}</FormErrorMessage>
         </FormControl>
         <FormControl isInvalid={errors.password}>
-          <FormLabel htmlFor="password">Password</FormLabel>
+          <FormLabel htmlFor="password">密码</FormLabel>
           <InputGroup>
             <Input id="password" type={showPassword ? "text" : "password"} value={password} onChange={handlePasswordChange} />
             <InputRightElement>
@@ -68,7 +68,7 @@ const Index = () => {
           <FormErrorMessage>{errors.password}</FormErrorMessage>
         </FormControl>
         <Button type="submit" colorScheme="teal" isLoading={isSubmitting} width="full">
-          Login
+          登录
         </Button>
       </VStack>
     </Container>
