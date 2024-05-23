@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Container, VStack, Input, Button, Heading, FormControl, FormLabel, FormErrorMessage, InputGroup, InputRightElement, IconButton } from "@chakra-ui/react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
@@ -9,6 +10,7 @@ const Index = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({ email: "", password: "" });
 
+  const navigate = useNavigate();
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
   const handleShowPasswordClick = () => setShowPassword(!showPassword);
@@ -42,7 +44,7 @@ const Index = () => {
     // Simulate an API call
     setTimeout(() => {
       setIsSubmitting(false);
-      alert("Logged in successfully!");
+      navigate("/customer-info");
     }, 1000);
   };
 
